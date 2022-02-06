@@ -41,7 +41,7 @@ routerLinkActive="active"
 
 - path: src\app\pages\entries\entry-form\entry-form.component.html
 
-#### 3.41 Criando uma arquitetura
+# 3.41 Criando uma arquitetura
 
 1. Pasta/Módulo core: src\app\core
 
