@@ -83,3 +83,28 @@ this.http = injector.get(HttpClient);
   }
 
 - path: src\app\pages\categories\shared\category.service.ts
+
+# 3.48 Passando o método 'jsonDataToResource' como parâmetro para o BaseResourceService
+
+1. Passar o nome da função sem os () não executa a função. Nesse caso, estamos apenas dizendo que
+   é essa função que deverá ser executada quando for solicitado:
+   - Exemplo: Entry.fromJson
+
+Parâmetro no construtor:
+
+- protected jsonDataToResourceFn: (jsonData: any) => T // Converte o jsonData para o tipo T
+- path: src\app\shared\services\base-resource.service.ts
+
+Uso na classe filha (3rd parâmetro):
+
+- super("api/entries", injector, Entry.fromJson);
+
+2. this
+   getAll(): Observable<T[]> {
+   return this.http.get(this.apiPath).pipe(
+   map(this.jsonDataToResources.bind(this)), // bind(this): Esse this se refere à classe que está sendo instanciada ao chamar esse método
+   catchError(this.handleError)
+   );
+   }
+
+- path: src\app\shared\services\base-resource.service.ts
