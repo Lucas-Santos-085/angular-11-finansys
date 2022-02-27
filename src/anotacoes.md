@@ -108,3 +108,13 @@ Uso na classe filha (3rd parâmetro):
    }
 
 - path: src\app\shared\services\base-resource.service.ts
+
+# 3.64 Adicionando o template da tela de relatórios
+
+<!-- hr: para separar -->
+<hr />
+
+<!-- No card-deck, os cards inseridos se adaptam para a largura total -->
+<div class="card-deck mt-5 mb-5">
+
+- path: src\app\pages\reports\reports\reports.component.html

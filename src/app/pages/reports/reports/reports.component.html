@@ -1,5 +1,5 @@
 <app-bread-crumb
-  [items]="[{text: 'Relatório de Receitas e Despesas'}]"
+  [items]="[{ text: 'Relatório de Receitas e Despesas' }]"
 ></app-bread-crumb>
 
 <app-page-header
@@ -7,11 +7,8 @@
   [show-button]="false"
 ></app-page-header>
 
-
 <div class="card">
-  <div class="card-header">
-    Selecione o Mês e Ano para gerar os relatórios
-  </div>
+  <div class="card-header">Selecione o Mês e Ano para gerar os relatórios</div>
 
   <div class="card-body">
     <div class="form-row">
@@ -49,7 +46,11 @@
 
     <div class="form-row">
       <div class="col-md text-right">
-        <button type="button" (click)="generateReports()" class="btn btn-primary">
+        <button
+          type="button"
+          (click)="generateReports()"
+          class="btn btn-primary"
+        >
           Gerar Relatórios
         </button>
       </div>
@@ -57,49 +58,53 @@
   </div>
 </div>
 
+<!-- No card-deck, os cards inseridos se adaptam para a largura total -->
 <div class="card-deck mt-5 mb-5">
   <div class="card text-center text-white bg-success">
-    <div class="card-header">
-      TOTAL DE RECEITAS
-    </div>
+    <div class="card-header">TOTAL DE RECEITAS</div>
     <div class="card-body">
       <h3 class="card-title">
-        {{revenueTotal}}
+        {{ revenueTotal }}
       </h3>
     </div>
   </div>
 
   <div class="card text-center text-white bg-danger">
-    <div class="card-header">
-      TOTAL DE DESPESAS
-    </div>
+    <div class="card-header">TOTAL DE DESPESAS</div>
     <div class="card-body">
       <h3 class="card-title">
-        {{expenseTotal}}
+        {{ expenseTotal }}
       </h3>
     </div>
   </div>
 
   <div class="card text-center text-white bg-info">
-    <div class="card-header">
-      SALDO
-    </div>
+    <div class="card-header">SALDO</div>
     <div class="card-body">
       <h3 class="card-title">
-        {{balance}}
+        {{ balance }}
       </h3>
     </div>
   </div>
 </div>
 
-<hr>
+<!-- hr: para separar -->
+<hr />
 
 <div class="row mt-5 mb-4">
   <div class="col-md-6">
-    <p-chart type="bar" [data]="revenueChartData" [options]="chartOptions"></p-chart>
+    <p-chart
+      type="bar"
+      [data]="revenueChartData"
+      [options]="chartOptions"
+    ></p-chart>
   </div>
 
   <div class="col-md-6">
-    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions"></p-chart>
+    <p-chart
+      type="bar"
+      [data]="expenseChartData"
+      [options]="chartOptions"
+    ></p-chart>
   </div>
 </div>
