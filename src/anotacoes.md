@@ -118,3 +118,5 @@ Uso na classe filha (3rd parâmetro):
 <div class="card-deck mt-5 mb-5">
 
 - path: src\app\pages\reports\reports\reports.component.html
+
+# 4 Tetantiva de implementar filtro por botão
